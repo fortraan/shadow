@@ -1,0 +1,83 @@
+Shadow is [going to be] a programming language based on Java and C#.
+
+Shadow's file extension is .sl, for ShadowLang.
+
+Variables can be strongly or dynamically typed:
+var - dynamic type
+int - signed integer
+uint - unsigned integer
+float - signed floating point
+ufloat - unsigned floating point
+double - signed double precision float
+udouble - unsigned double precision float
+long - signed long
+ulong - unsigned long
+complex - complex number (represented by ar + bi)
+
+Access modifiers:
+open - accessible from anywhere in the namespace
+closed - accessible from declaring file and sub-objects
+isolated - accessible only from declaring file
+
+Methods are declared by return type:
+void - returns nothing
+result - returns a value corresponding to whether the method fails, suceeds, etc.
+[any valid variable type] - returns a value of the specified type
+
+Use of other namespaces is declared with "requires" statements:
+requires Shadow.Core - Allows use of the Shadow.Core namespace
+Files that are hosted on the internet can also be used, but only trusted, secure sources should be used:
+requires https://github.com/SomeUser/SomeRepository/SomeCode.sl - Retrieves the file "SomeCode.sl" from github
+
+Modifiers are marked with greater-than and less-than signs:
+<Overrides> - Example of the Override modifier
+
+Namespace membership is like C#:
+namespace Name.Space {
+    // code
+}
+
+Comments:
+// comment - single-line comment
+/*
+comment - multi-line comment
+*/
+
+Subclasses:
+[open/closed/isolated] class SubClass < SuperClass
+
+Arguments are much like Java - an ellipses is treated as an array
+
+Shadow supports Java's inline if/elses:
+(condition) ? ifTrue : ifFalse
+
+Shadow can also compile other programming languages:
+lang "fortran" {
+    PRINT *, "Hello, World!"
+}
+lang "c++" {
+    std::cout << "Hello, World!" << std::endl;
+}
+
+Example Hello World Program:
+requires Shadow;
+requires Shadow.IO;
+
+open class HelloWord {
+    open static void main(string args[]) {
+        Console.PrintLn("Hello, World!");
+    }
+}
+
+FizzBuzz implementation:
+requires Shadow;
+requires Shadow.IO;
+
+open class FizzBuzz {
+    open static void main(string args[]) {
+        for (int i = 0; i < 100; i++) {
+            string toPrint = ((i % 3) ? "Fizz" : "") + ((i % 5) ? "Buzz" : "") + ((!(i % 3 || i % 5)) ? i : "");
+            Console.PrintLn(toPrint);
+        }
+    }
+}
