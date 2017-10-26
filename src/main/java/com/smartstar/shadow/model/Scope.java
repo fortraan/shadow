@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Scope {
     List<Variable> variables;
+    List<Method> methods;
 
     public void addVariable(Variable var) {
         variables.add(var);

@@ -69,21 +69,21 @@ public class Variable {
         complexVal = val;
     }
 
-    public void value(TypedValue<?> val) {
-        if (val.type == Integer.class) {
-
-        } else if (val.type == Float.class) {
-
+    public void value(TypedValue val) {
+        if (type == Type.INT) {
+            intVal = (int) val.value;
+        } else if (type == Type.FLOAT) {
+            floatVal = (float) val.value;
         } else if (val.type == Double.class) {
-
+            doubleVal = (double) val.value;
         } else if (val.type == Long.class) {
-
+            longVal = (long) val.value;
         } else if (val.type == Boolean.class) {
-
+            boolVal = (boolean) val.value;
         } else if (val.type == String.class) {
-
+            stringVal = (String) val.value;
         } else if (val.type == ComplexNumber.class) {
-
+            complexVal = (ComplexNumber) val.value;
         }
     }
 
@@ -114,4 +114,22 @@ public class Variable {
     public ComplexNumber complexValue() {
         return complexVal;
     }
+
+    /*public <T> T tValue() {
+        if (type == Type.INT) {
+            return (T) intVal;
+        } else if (type == Type.FLOAT) {
+            floatVal = (float) val.value;
+        } else if (val.type == Double.class) {
+            doubleVal = (double) val.value;
+        } else if (val.type == Long.class) {
+            longVal = (long) val.value;
+        } else if (val.type == Boolean.class) {
+            boolVal = (boolean) val.value;
+        } else if (val.type == String.class) {
+            stringVal = (String) val.value;
+        } else if (val.type == ComplexNumber.class) {
+            complexVal = (ComplexNumber) val.value;
+        }
+    }*/
 }

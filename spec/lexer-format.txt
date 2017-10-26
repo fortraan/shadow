@@ -1,0 +1,3 @@
+requires (.+);
+
+[open|closed|isolated] class ([a-zA-z_]) (<
