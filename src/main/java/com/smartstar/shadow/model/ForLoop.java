@@ -13,11 +13,12 @@ public class ForLoop implements Component {
     public Variable evaluate(Scope parentScope) {
         scope = parentScope;
         Variable indexer = new Variable(indexerType, indexerName);
-        indexer
-        scope.addVariable();
+        //indexer
+        //scope.addVariable();
         for (Component component : components) {
 
         }
+        return null;
     }
 
     @Override
